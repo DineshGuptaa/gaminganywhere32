@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+<Project DefaultTargets="Build" ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup Label="ProjectConfigurations">
     <ProjectConfiguration Include="Debug|Win32">
       <Configuration>Debug</Configuration>
@@ -13,18 +13,21 @@
   <PropertyGroup Label="Globals">
     <ProjectGuid>{827389A0-7407-40A6-90E9-843BC327236D}</ProjectGuid>
     <RootNamespace>serverlive555</RootNamespace>
+    <WindowsTargetPlatformVersion>10.0.17763.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
     <ConfigurationType>DynamicLibrary</ConfigurationType>
     <UseDebugLibraries>true</UseDebugLibraries>
     <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v141</PlatformToolset>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
     <ConfigurationType>DynamicLibrary</ConfigurationType>
     <UseDebugLibraries>false</UseDebugLibraries>
     <WholeProgramOptimization>true</WholeProgramOptimization>
     <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v141</PlatformToolset>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
   <ImportGroup Label="ExtensionSettings">
@@ -48,7 +51,7 @@
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <OutputFile>$(OutDir)mod\$(TargetName)$(TargetExt)</OutputFile>
       <AdditionalLibraryDirectories>..\..\..\deps.win32\lib;$(OutDir)</AdditionalLibraryDirectories>
-      <AdditionalDependencies>libga.lib;ws2_32.lib;SDL2.lib;swscale.lib;swresample.lib;postproc.lib;avdevice.lib;avfilter.lib;avformat.lib;avcodec.lib;avutil.lib;libliveMedia.d.lib;libgroupsock.d.lib;libBasicUsageEnvironment.d.lib;libUsageEnvironment.d.lib;pthreadVC2.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>libga.lib;ws2_32.lib;SDL2.lib;swscale.lib;swresample.lib;postproc.lib;avdevice.lib;avfilter.lib;avformat.lib;avcodec.lib;avutil.lib;liveMedia.d.lib;groupsock.d.lib;BasicUsageEnvironment.d.lib;UsageEnvironment.d.lib;pthreadVC2.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
@@ -64,7 +67,7 @@
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
-      <AdditionalDependencies>libga.lib;ws2_32.lib;SDL2.lib;swscale.lib;swresample.lib;postproc.lib;avdevice.lib;avfilter.lib;avformat.lib;avcodec.lib;avutil.lib;libliveMedia.lib;libgroupsock.lib;libBasicUsageEnvironment.lib;libUsageEnvironment.lib;pthreadVC2.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>libga.lib;ws2_32.lib;SDL2.lib;swscale.lib;swresample.lib;postproc.lib;avdevice.lib;avfilter.lib;avformat.lib;avcodec.lib;avutil.lib;liveMedia.lib;groupsock.lib;BasicUsageEnvironment.lib;UsageEnvironment.lib;pthreadVC2.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <OutputFile>$(OutDir)mod\$(TargetName)$(TargetExt)</OutputFile>
       <AdditionalLibraryDirectories>..\..\..\deps.win32\lib;$(OutDir)</AdditionalLibraryDirectories>
     </Link>

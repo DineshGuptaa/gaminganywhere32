@@ -38,7 +38,7 @@ LIB_PATH	= /libpath:..\..\deps.$(GA_WINSYS)\lib
 LIB_SYSTEM	= kernel32.lib user32.lib ws2_32.lib ole32.lib
 
 LIB_D3D		= d3d9.lib d3dx9.lib d3d10.lib d3d10_1.lib d3d11.lib DXGI.lib dxguid.lib dxerr.lib
-LIB_LIVE555	= libliveMedia.lib libgroupsock.lib libBasicUsageEnvironment.lib libUsageEnvironment.lib
+LIB_LIVE555	= liveMedia.lib groupsock.lib BasicUsageEnvironment.lib UsageEnvironment.lib
 LIB_SDL		= SDL2.lib SDL2main.lib SDL2_ttf.lib
 LIB_FFMPEG	= swscale.lib swresample.lib postproc.lib \
 		  avdevice.lib avfilter.lib avformat.lib avcodec.lib avutil.lib
