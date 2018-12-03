@@ -18,7 +18,7 @@ INCLUDES	= -I..\..\deps.$(GA_WINSYS)\include \
 NODEBUG		= 1
 TARGETTOS	= WINNT
 
-!include <ntwin32.mak>
+#!include <ntwin32.mak>
 
 TOOLS32		= $(VSINSTALLDIR)\VC
 #CXX		= "$(TOOLS32)\bin\cl"

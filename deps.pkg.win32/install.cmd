@@ -26,7 +26,7 @@ xcopy /e /q /h /r /y ffmpeg-%FFMPEG%-win32-dev\include\* %GADEPS%\include\
 rmdir /s /q ffmpeg-%FFMPEG%-win32-dev
 @REM
 echo Installing SDL2 ...
-set SDL2=2.0.3
+set SDL2=2.0.9
 bin\7za x -y SDL2-devel-%SDL2%-VC.zip
 move /y SDL2-%SDL2%\lib\x86\*.dll %GADEPS%\bin\
 move /y SDL2-%SDL2%\include\*.h %GADEPS%\include\SDL2\
@@ -49,8 +49,8 @@ move /y Pre-built.2\lib\x86\*.lib %GADEPS%\lib\
 rmdir /s /q Pre-built.2
 @REM
 echo Installing live555 ...
-@REM bin\7za x live.2014.05.27v2-bin.zip
-bin\7za x live.2015.02.05-bin.zip
+@REM bin\7za x live.2014.05.27v2-bin.zip live.2015.02.05-bin
+bin\7za x live.2018.12.03-bin.zip
 move /y live555\include\*.* %GADEPS%\include\live555\
 move /y live555\x86\lib\*.lib %GADEPS%\lib\
 rmdir /s /q live555
