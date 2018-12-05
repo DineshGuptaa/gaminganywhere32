@@ -54,7 +54,11 @@ Code commented
 	rtspserver.obj : error LNK2019: unresolved external symbol _ff_rtsp_parse_line referenced in function "void * __cdecl rtspserver(void *)" (?rtspserver@@YAPAXPAX@Z)
 	
 	server-ffmpeg.dll : fatal error LNK1120: 1 unresolved externals
-
+	
+	..\..\deps.win32\include\pthread.h(320): error C2011: 'timespec': 'struct' type redefinition
+	
+	Add this code '#define HAVE_STRUCT_TIMESPEC' as 1st line before '#if !defined( PTHREAD_H )'
+	
 Compiler error for liv555
 		1600 to 1900 mismatch : This error due to Version 2010 -->2017
 		
@@ -65,4 +69,23 @@ Compiler error for liv555
 		error LNK2019: unresolved external symbol __imp____iob_func referenced in function _ShowError
 		
 		syntax error : expected ':' or '=' separator: This is due to symbolic link
-			copy content from module\NMakefile.def to ga\server\periodic\NMakefile.def	
+			copy content from module\NMakefile.def to ga\server\periodic\NMakefile.def
+
+
+		HOW TO BUILD on Win32 platform
+		Prerequisites:
+		- Visual Studio (C++) 2010 (we did not test it with other versions)
+		- DirectX SDK (we use the version released in June, 2010)
+		- Microsoft SDK (we have version 7.0 installed on Windows 7, it may be installed with VS 2010)
+		Steps:
+		Install dependencies by running 'install.cmd' in 'deps.pkgs.win32' directory.
+		Install DirectX SDK into 'C:\Microsoft DirectX SDK'. If you install in other places, modify the SDK paths used in ga/module/vsource-desktop/NMakefile.d3d, and ga/server/event-driven/NMakefile (if applicable).
+		Open Visual C++ command line prompt
+		Build GA by running 'nmake /f NMakefile all' command in the 'ga' directory.
+		Install GA by running 'nmake /f NMakefile install' command in the 'ga' directory. All the generated files will be installed into 'bin' directory.
+
+Finally move the dll from files
+
+	gaminganywhere32\deps.win32\bin
+	into 
+	bin/win32 
