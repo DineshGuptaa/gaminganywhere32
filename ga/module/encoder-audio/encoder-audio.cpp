@@ -103,11 +103,11 @@ aencoder_init(void *arg) {
 	// encoder for SDP generation
 	switch(rtspconf->audio_encoder_codec->id) {
 	case AV_CODEC_ID_AAC:
-		// need ctx with CODEC_FLAG_GLOBAL_HEADER flag
+		// need ctx with AV_CODEC_FLAG_GLOBAL_HEADER flag
 		encoder_sdp = avcodec_alloc_context3(rtspconf->audio_encoder_codec);
 		if(encoder_sdp == NULL)
 			goto init_failed;
-		encoder_sdp->flags |= CODEC_FLAG_GLOBAL_HEADER;
+		encoder_sdp->flags |= AV_CODEC_FLAG_GLOBAL_HEADER;
 		if(encoder_sdp == NULL)
 			goto init_failed;
 		encoder_sdp = ga_avcodec_aencoder_init(encoder_sdp,

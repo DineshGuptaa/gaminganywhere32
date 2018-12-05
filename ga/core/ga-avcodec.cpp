@@ -110,11 +110,11 @@ ga_avformat_new_stream(AVFormatContext *ctx, int id, AVCodec *codec) {
 	st->id = id;
 	//
 	if(ctx->flags & AVFMT_GLOBALHEADER) {
-		st->codec->flags |= CODEC_FLAG_GLOBAL_HEADER;
+		st->codec->flags |= AV_CODEC_FLAG_GLOBAL_HEADER;
 	}
 	// some codec will need GLOBAL_HEADER to generate ctx->extradata!
 	if(codec->id == AV_CODEC_ID_H264 || codec->id == AV_CODEC_ID_AAC) {
-		st->codec->flags |= CODEC_FLAG_GLOBAL_HEADER;
+		st->codec->flags |= AV_CODEC_FLAG_GLOBAL_HEADER;
 	}
 	return st;
 }
@@ -165,7 +165,7 @@ ga_avcodec_vencoder_init(AVCodecContext *ctx, AVCodec *codec, int width, int hei
 	/* always enable GLOBAL HEADER
 	 * - required header should be passed via something like
 	 * - sprop-parameter-sets in SDP descriptions */
-	ctx->flags |= CODEC_FLAG_GLOBAL_HEADER;
+	ctx->flags |= AV_CODEC_FLAG_GLOBAL_HEADER;
 #ifdef WIN32
 	ctx->time_base.num = 1;
 	ctx->time_base.den = fps;

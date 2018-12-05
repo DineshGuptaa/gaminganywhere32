@@ -176,7 +176,7 @@ D3D9_screen_capture(IDirect3DDevice9 * pDevice) {
 		unsigned char *src, *dst;
 		data = dpipe_get(g_pipe[0]);
 		frame = (vsource_frame_t*) data->pointer;
-		frame->pixelformat = PIX_FMT_BGRA;
+		frame->pixelformat = AV_PIX_FMT_BGRA;
 		frame->realwidth = desc.Width;
 		frame->realheight = desc.Height;
 		frame->realstride = desc.Width<<2;
@@ -717,7 +717,7 @@ hook_DXGISwapChainPresent(
 			unsigned char *src, *dst;
 			data = dpipe_get(g_pipe[0]);
 			frame = (vsource_frame_t*) data->pointer;
-			frame->pixelformat = PIX_FMT_BGRA;
+			frame->pixelformat = AV_PIX_FMT_BGRA;
 			frame->realwidth = desc.Width;
 			frame->realheight = desc.Height;
 			frame->realstride = desc.Width<<2;
@@ -799,7 +799,7 @@ hook_DXGISwapChainPresent(
 			unsigned char *src, *dst;
 			data = dpipe_get(g_pipe[0]);
 			frame = (vsource_frame_t*) data->pointer;
-			frame->pixelformat = PIX_FMT_BGRA;
+			frame->pixelformat = AV_PIX_FMT_BGRA;
 			frame->realwidth = desc.Width;
 			frame->realheight = desc.Height;
 			frame->realstride = desc.Width<<2;

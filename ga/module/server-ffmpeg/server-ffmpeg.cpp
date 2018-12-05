@@ -198,10 +198,10 @@ ff_server_send_packet_1(const char *prefix, void *ctx, int channelId, AVPacket *
 				rtsp->stream[channelId]->time_base);
 	}
 #ifdef HOLE_PUNCHING
-	if(ffio_open_dyn_packet_buf(&rtsp->fmtctx[channelId]->pb, rtsp->mtu) < 0) {
+	/*if(ffio_open_dyn_packet_buf(&rtsp->fmtctx[channelId]->pb, rtsp->mtu) < 0) {
 		ga_error("%s: buffer allocation failed.\n", prefix);
 		return -1;
-	}
+	}*/
 	if(av_write_frame(rtsp->fmtctx[channelId], pkt) != 0) {
 		ga_error("%s: write failed.\n", prefix);
 		return -1;

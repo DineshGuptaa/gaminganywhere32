@@ -15,12 +15,12 @@ move /y *.h %GADEPS%\include
 @REM
 echo Installing ffmpeg ...
 @REM set FFMPEG=2.5.2
-set FFMPEG=2.8
-bin\7za x -y ffmpeg-%FFMPEG%-win32-shared.7z
+set FFMPEG=4.1
+bin\7za x -y ffmpeg-%FFMPEG%-win32-shared.zip
 move /y ffmpeg-%FFMPEG%-win32-shared\bin\* %GADEPS%\bin\
 rmdir /s /q ffmpeg-%FFMPEG%-win32-shared
 @REM
-bin\7za x -y ffmpeg-%FFMPEG%-win32-dev.7z
+bin\7za x -y ffmpeg-%FFMPEG%-win32-dev.zip
 move /y ffmpeg-%FFMPEG%-win32-dev\lib\*.lib %GADEPS%\lib\
 xcopy /e /q /h /r /y ffmpeg-%FFMPEG%-win32-dev\include\* %GADEPS%\include\
 rmdir /s /q ffmpeg-%FFMPEG%-win32-dev

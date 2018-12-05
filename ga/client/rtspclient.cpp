@@ -373,9 +373,9 @@ init_vdecoder(int channel, const char *sprop) {
 		rtsperror("video decoder(%d): cannot allocate context\n", channel);
 		return -1;
 	}
-	if(codec->capabilities & CODEC_CAP_TRUNCATED) {
+	if(codec->capabilities & AV_CODEC_CAP_TRUNCATED) {
 		rtsperror("video decoder(%d): codec support truncated data\n", channel);
-		ctx->flags |= CODEC_FLAG_TRUNCATED;
+		ctx->flags |= AV_CODEC_FLAG_TRUNCATED;
 	}
 	if(sprop != NULL) {
 		if(decode_sprop(ctx, sprop) != NULL) {

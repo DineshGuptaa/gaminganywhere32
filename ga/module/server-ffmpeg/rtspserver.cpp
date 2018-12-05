@@ -653,10 +653,10 @@ rtp_new_av_stream(RTSPContext *ctx, struct sockaddr_in *sin, int streamid, enum 
 			fmtctx->packet_size, ctx->mtu);
 	}
 #ifdef HOLE_PUNCHING
-	if(ffio_open_dyn_packet_buf(&fmtctx->pb, ctx->mtu) < 0) {
+	/*if(ffio_open_dyn_packet_buf(&fmtctx->pb, ctx->mtu) < 0) {
 		ga_error("cannot open dynamic packet buffer\n");
 		return -1;
-	}
+	}*/
 	ga_error("RTP: Dynamic buffer opened, max_packet_size=%d.\n",
 		(int) fmtctx->pb->max_packet_size);
 	if(ctx->lower_transport[streamid] == RTSP_LOWER_TRANSPORT_UDP) {
@@ -677,10 +677,10 @@ rtp_new_av_stream(RTSPContext *ctx, struct sockaddr_in *sin, int streamid, enum 
 			streamid, fmtctx->filename, fmtctx->pb->max_packet_size);
 	} else if(ctx->lower_transport[streamid] == RTSP_LOWER_TRANSPORT_TCP) {
 		// XXX: should we use avio_open_dyn_buf(&fmtctx->pb)?
-		if(ffio_open_dyn_packet_buf(&fmtctx->pb, ctx->mtu) < 0) {
+		/*if(ffio_open_dyn_packet_buf(&fmtctx->pb, ctx->mtu) < 0) {
 			ga_error("cannot open dynamic packet buffer\n");
 			return -1;
-		}
+		}*/
 		ga_error("RTP/TCP: Dynamic buffer opened, max_packet_size=%d.\n",
 			(int) fmtctx->pb->max_packet_size);
 	}
@@ -1183,7 +1183,7 @@ rtspserver(void *arg) {
 				strcpy(mysession, buf+9);
 			}
 			//
-			ff_rtsp_parse_line(header, buf, NULL, NULL);
+			//ff_rtsp_parse_line(header, buf, NULL, NULL);
 			//
 			if(myseq > 0 && header->seq <= 0) {
 				ga_error("WARNING: CSeq fixes applied (%d->%d).\n",
