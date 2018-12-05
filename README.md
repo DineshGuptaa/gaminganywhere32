@@ -73,6 +73,7 @@ Compiler error for liv555
 
 
 HOW TO BUILD on Win32 platform
+
 	Prerequisites:
 	- Visual Studio (C++) 2010 (we did not test it with other versions)
 	- DirectX SDK (we use the version released in June, 2010)
